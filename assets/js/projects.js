@@ -27,7 +27,7 @@ const mainProjects = [
         name: "React Carousel",
         description: "A Generic carousel UI component for React using material ui.",
         fullDescription: "A Generic carousel UI component for React using material ui.",
-        link: "https://github.com/Learus/Lear-Music-Reader",
+        link: "https://learus.github.io/react-material-ui-carousel",
         image: "images/carousel.png",
         color: "#C9A27E"
     }
