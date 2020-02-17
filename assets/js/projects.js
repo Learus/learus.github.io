@@ -1,5 +1,21 @@
 const mainProjects = [
     {
+        name: "Terrio",
+        description: "A exciting mobile game game made in the Unity Engine.",
+        fullDescription: "A exciting mobile game game made in the Unity Engine. A game currently in development, Terrio is a different take on the popular Paper.io game. Extend your territory, avoid or kill enemies, while using strong powerups and cool visuals.",
+        link: "https://play.google.com/store/apps/details?id=com.Brewery.Terrio",
+        image: "images/terrio.webp",
+        color: "#CE7E78"
+    },
+    {
+        name: "React Carousel",
+        description: "A Generic carousel UI component for React using Material UIi.",
+        fullDescription: "A Generic carousel UI component for React using Material UI.",
+        link: "https://learus.github.io/react-material-ui-carousel",
+        image: "images/carousel.png",
+        color: "#C9A27E"
+    },
+    {
         name: "Lear Music Reader",
         description: "A PDF Reader specially designed for musicians.",
         fullDescription: "A PDF Reader specially designed for musicians. A project currently in development, Lear Music Reader aspires to provide musicians with everything they could need from a music sheet reader",
@@ -14,22 +30,6 @@ const mainProjects = [
         link: "https://github.com/Learus/HashCode2019",
         image: "images/hashcode.png",
         color: "#7D85B1"
-    },
-    {
-        name: "Terrio",
-        description: "A exciting mobile game game made in the Unity Engine.",
-        fullDescription: "A exciting mobile game game made in the Unity Engine. A game currently in development, Terrio is a different take on the popular Paper.io game. Extend your territory, avoid or kill enemies, while using strong powerups and cool visuals.",
-        link: "https://play.google.com/store/apps/details?id=com.Brewery.Terrio",
-        image: "images/terrio.webp",
-        color: "#CE7E78"
-    },
-    {
-        name: "React Carousel",
-        description: "A Generic carousel UI component for React using material ui.",
-        fullDescription: "A Generic carousel UI component for React using material ui.",
-        link: "https://learus.github.io/react-material-ui-carousel",
-        image: "images/carousel.png",
-        color: "#C9A27E"
     }
 ]
 
