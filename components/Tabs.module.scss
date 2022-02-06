@@ -1,0 +1,54 @@
+@import '../styles/variables.scss';
+
+.Tabs
+{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.Tab
+{
+    padding: 2.5rem;
+    font-size: 1.5rem;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    // align-content: center;
+
+    &.brown
+    {
+        @include colorize($brown);
+    }
+
+    &.green
+    {
+        @include colorize($green);
+    }
+
+    &.white
+    {
+        @include colorize($white);
+    }
+
+    &.orange
+    {
+        @include colorize($orange);
+    }
+
+    &.blue
+    {
+        @include colorize($blue);
+    }
+
+
+    &.black
+    {
+        @include colorize($black);
+    }
+}
