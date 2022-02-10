@@ -8,6 +8,14 @@
     justify-content: space-around;
 }
 
+@include mobile
+{
+    .Tab
+    {
+        padding: 1.5rem !important;
+    }
+}
+
 .Tab
 {
     padding: 2.5rem;
@@ -19,36 +27,43 @@
     display: flex;
     justify-content: center;
     align-items: center;
+
+    transition: border-width 300ms linear;
+
+    &.Active
+    {
+        // border-bottom: 20px solid $white;
+    }
     // align-content: center;
 
     &.brown
     {
-        @include colorize($brown);
+        @include colorize($brown, 5);
     }
 
     &.green
     {
-        @include colorize($green);
+        @include colorize($green, 5);
     }
 
     &.white
     {
-        @include colorize($white);
+        @include colorize($white, 5);
     }
 
     &.orange
     {
-        @include colorize($orange);
+        @include colorize($orange, 5);
     }
 
     &.blue
     {
-        @include colorize($blue);
+        @include colorize($blue, 5);
     }
 
 
     &.black
     {
-        @include colorize($black);
+        @include colorize($black, 5);
     }
 }

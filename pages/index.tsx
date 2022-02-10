@@ -7,14 +7,15 @@ import Link from 'next/link';
 import Tabs, { Tab } from '../components/Tabs';
 import { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faGithub, faGithubAlt, faGooglePay, faGooglePlay, faLinkedin, faLinkedinIn, faNpm } from '@fortawesome/free-brands-svg-icons';
+import { faEmber, faGithub, faGithubAlt, faGooglePay, faGooglePlay, faLinkedin, faLinkedinIn, faNpm } from '@fortawesome/free-brands-svg-icons';
 import { faEnvelope, faEnvelopeOpen } from '@fortawesome/free-regular-svg-icons';
-import { faAt, faDesktop, faEnvelopeSquare, faGamepad, faNetworkWired, faTrophy } from '@fortawesome/free-solid-svg-icons';
+import { faAt, faBeer, faCoffee, faDesktop, faEnvelopeSquare, faGamepad, faMugHot, faNetworkWired, faTrophy } from '@fortawesome/free-solid-svg-icons';
 import AwesomeSlider from 'react-awesome-slider';
 // import AutoplaySlider from 'react-awesome-slider/src/hoc/autoplay';
 import 'react-awesome-slider/dist/styles.css';
 import 'react-awesome-slider/dist/custom-animations/cube-animation.css';
 import { Project } from '../components/Projects/Project';
+import Carousel from '../components/Carousel';
 
 
 const tabs = {
@@ -72,6 +73,9 @@ const Home: NextPage = () =>
                             <Link href='https://github.com/Learus'><a target='_blank'>
                                 <FontAwesomeIcon icon={faGithub} size='2x' />
                             </a></Link>
+                            <Link href='https://www.buymeacoffee.com/Learus'><a target='_blank'>
+                                <FontAwesomeIcon icon={faCoffee} size='2x' />
+                            </a></Link>
 
                         </header>
                         <div className={styles.name}>
@@ -99,7 +103,7 @@ const Home: NextPage = () =>
                         </div>
                     </section>
 
-                    <section>
+                    <section className={styles.carouselSection}>
                         <div className={styles.carousel}>
                             <Tabs activeKey={activeTab} onSelect={setActiveTab}>
                                 {Object.entries(tabs).map(([key, value]) =>
@@ -117,20 +121,73 @@ const Home: NextPage = () =>
 
                             </Tabs>
                             <div className={`${styles.activeTab} ${styles[tabs[activeTab].color]}`}>
-                                <AwesomeSlider
-                                    bullets={false}
-                                    className={`${styles.activeTab} ${styles[tabs[activeTab].color]}`}
-                                    animation='cube'
-                                >
-                                    <div style={{ overflowY: 'scroll', display: 'block', backgroundColor: 'unset' }}>
+
+                                {activeTab === 'web' &&
+                                    <Carousel
+                                        animation='slide'
+                                        duration={1000}
+                                        height='100%'
+                                        indicators={false}
+                                        autoPlay={false}
+                                        navButtonsAlwaysVisible
+                                        fullHeightHover={false}
+                                    >
+
                                         <Project
                                             title="React Material UI Carousel"
                                             technology={['ReactJS', 'Material UI', 'Typescript']}
                                             description='asdf'
-                                            images={['https://dummyimage.com/600x400/000/fff', 'https://dummyimage.com/600x400/000/111']}
+                                            images={['https://source.unsplash.com/featured/?carousel']}
+                                            color='green'
                                         />
-                                    </div>
-                                </AwesomeSlider>
+                                        <Project
+                                            title="Athens Philharmonia Orchestra Website"
+                                            technology={['ReactJS', 'Material UI', 'Typescript']}
+                                            description='asdf'
+                                            images={['https://source.unsplash.com/featured/?orchestra']}
+                                            color='black'
+                                        />
+                                       
+                                    </Carousel>
+                                }
+
+                                {activeTab === 'game' &&
+                                    <Carousel
+                                        animation='slide'
+                                        duration={1000}
+                                        height='100%'
+                                        // className={`${styles.activeTab} ${styles[tabs[activeTab].color]}`}
+                                    >
+
+                                        <Project
+                                            title="Terrio"
+                                            technology={['Unity', 'C#']}
+                                            description='asdf'
+                                            images={['/terrio.png']}
+                                            color='orange'
+                                        />
+                                    </Carousel>
+                                }
+                                
+                                {activeTab === 'contests' &&
+                                    <Carousel
+                                        animation='slide'
+                                        duration={1000}
+                                        height='100%'
+                                        // className={`${styles.activeTab} ${styles[tabs[activeTab].color]}`}
+                                    >
+
+                                        <Project
+                                            title="HashCode 2019"
+                                            technology={['ReactJS', 'Material UI', 'Typescript']}
+                                            description='asdf'
+                                            images={['https://source.unsplash.com/featured/?google']}
+                                            color='blue'
+                                        />
+                                    </Carousel>
+                                }
+
+
                             </div>
                         </div>
 

@@ -1,4 +1,6 @@
-import React, { Children, CSSProperties, ReactNode } from 'react';
+import { faAngleLeft, faArrowLeft, faArrowUp } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import React, { Children, CSSProperties, ReactNode, useCallback, useRef } from 'react';
 import styles from './Tabs.module.scss';
 
 interface TabsProps
@@ -37,11 +39,37 @@ interface TabProps
     color: 'brown' | 'white' | 'green' | 'black' | 'orange' | string
 }
 
-export function Tab(props: TabProps)
+export function Tab({ children, onClick, ...props }: TabProps)
 {
+    const className = `${styles.Tab} ${styles[props.color]} ${props.active ? styles.Active : ''}`
+    const ref = useRef<HTMLDivElement>(null);
 
-    const className = `${styles.Tab} ${styles[props.color]}`
+    const scroll = () =>
+    {
+        if (ref.current)
+            ref.current.scrollIntoView({ behavior: 'smooth' });
+    };
+
     return (
-        <div className={className} {...props} onClick={(e) => props.onClick && props.onClick(props.eventkey)}/>
+        <div
+            className={className}
+            {...props}
+            onClick={(e) =>
+            {
+                onClick && onClick(props.eventkey);
+                scroll();
+            }}
+            ref={ref}
+        >
+            {children}
+            {props.active &&
+                <>
+                    {' '}
+                    <FontAwesomeIcon icon={faArrowLeft} style={{marginLeft: 10}}/>
+                </>
+            }
+
+        </div>
+
     )
 }

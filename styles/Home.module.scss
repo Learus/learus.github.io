@@ -39,9 +39,9 @@
 
         h2 {
             font-size: 1.5rem;
-            padding: 5px;
+            // padding: 5px;
             color: $orange;
-            margin-left: 30px;
+            // margin-left: 30px;
             transition: color 400ms;
             &:hover {
                 color: $white;
@@ -54,11 +54,20 @@
     .main {
         flex-direction: column !important;
         .name {
-            padding: 3rem !important;
+            padding: 1rem 2rem !important;
+
+            h1 {
+                font-size: 1.5rem !important;
+            }
+
+            .description {
+                font-size: 0.85rem !important;
+            }
         }
 
         .mainSection {
-            min-height: calc(100vh - 92px) !important;
+            min-height: calc(100vh - 72px) !important;
+            width: 100% !important;
         }
     }
 
@@ -66,15 +75,23 @@
         .mailLink {
             display: none;
         }
+
+        padding: 1rem 2rem !important;
+
+        .logo {
+            h2 {
+                font-size: 1.2rem !important;
+            }
+        }
+
+        a {
+            font-size: 0.8rem;
+        }
     }
 
     .carousel {
-        width: 100% !important;
         .Icon {
             margin-right: unset !important;
-        }
-        span {
-            display: none;
         }
     }
 }
@@ -89,8 +106,8 @@
 
         .mainSection {
             min-height: calc(100vh - 92px) !important;
+            width: 100% !important;
         }
-
     }
 
     .carousel {
@@ -104,16 +121,22 @@
     height: 100%;
     position: relative;
     flex: 1;
-    display: flex;
+    // display: flex;
     flex-direction: row;
     justify-content: space-between;
 
     .mainSection {
-        min-height: 100vh;
+        min-height: calc(100vh - 104px);
+        width: 100%;
+        // width: 50%;
     }
 
-    section
-    {
+    .carouselSection {
+        min-height: 100vh;
+        width: 100%;
+    }
+
+    section {
         flex: 1;
     }
 
@@ -172,19 +195,26 @@
     }
 
     .carousel {
-        position: fixed;
         display: flex;
         flex-direction: column;
         height: 100%;
-        width: 50%;
+        // width: 50%;
         box-shadow: -1px -3px 20px rgb(27, 27, 27);
+
+        span {
+            display: none;
+        }
 
         .Icon {
             margin-right: 20px;
         }
 
-        .activeTab {
+        .fullHeight {
             height: 100%;
+        }
+
+        .activeTab {
+            height: calc(100vh - 104px) !important;
             transition: background-color 400ms;
             // overflow-y: scroll;
 
