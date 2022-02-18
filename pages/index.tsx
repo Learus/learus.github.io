@@ -1,25 +1,20 @@
-import bannerImage from '../public/banner.jpeg';
 import Carousel from '../components/Carousel';
 import Head from 'next/head';
-import Image from 'next/image';
 import Link from 'next/link';
 import styles from '../styles/Home.module.scss';
 import Tabs, { Tab } from '../components/Tabs';
 import
 {
-    faCloudDownloadAlt,
     faCoffee,
     faDesktop,
-    faDownload,
     faGamepad,
     faTrophy
 } from '@fortawesome/free-solid-svg-icons';
-import { faGithub, faLinkedin, faNpm } from '@fortawesome/free-brands-svg-icons';
+import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Project } from '../components/Projects/Project';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import type { NextPage } from 'next'
-import axios from 'axios';
 import { webProjects } from '../projects/web';
 import { gameProjects } from '../projects/games';
 import { contestProjects } from '../projects/contests';
@@ -56,7 +51,7 @@ const Home: NextPage = () =>
             </Head>
 
             <div className={styles.banner}>
-                <Image src={bannerImage} alt='background' layout='fill' />
+                <img src={'banner.jpeg'} alt='background'/>
             </div>
 
             <div className={styles.container}>

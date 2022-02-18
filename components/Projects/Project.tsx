@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { ReactNode } from "react";
 import styles from './Project.module.scss'
 
@@ -17,8 +16,6 @@ export interface ProjectProps
 
 export function Project({ image, subtitle, description, title, technology, color, link, footer, position = 'left' }: ProjectProps)
 {
-    const Emphasis = (props: any) => <span className={`${styles[color]}`} {...props} />
-
     return (
         <div className={`${styles.Project} ${styles.black}`} >
 
