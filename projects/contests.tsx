@@ -12,8 +12,8 @@ const Orange = (props: any) => <span style={{ color: orange }} {...props} />
 const Green = (props: any) => <span style={{ color: green }} {...props} />
 
 export const contestProjects: ProjectProps[] = [{
-    title: "HashCode 2018",
-    subtitle: "March 1 2018",
+    title: "HashCode 2019",
+    subtitle: "February 28 2019",
     technology: ['Python'],
     description: (
         <>
