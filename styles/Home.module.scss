@@ -2,7 +2,8 @@
 
 .container {
     background-color: rgba($green, 0.15);
-    backdrop-filter: blur(7px);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
     min-width: 100vw;
 }
 
@@ -161,7 +162,7 @@
 
             button {
                 font-size: 1.4rem;
-                background-color: rgba($green, 0.5);
+                background-color: $orange;
                 border: 3px solid $white;
                 cursor: pointer;
                 border-radius: 3px;
@@ -174,6 +175,7 @@
                 transition: 200ms;
 
                 backdrop-filter: blur(5px);
+                -webkit-backdrop-filter: blur(5px);
 
                 &:hover {
                     background-color: rgba($orange, 0.9);
@@ -200,14 +202,6 @@
         height: 100%;
         // width: 50%;
         box-shadow: -1px -3px 20px rgb(27, 27, 27);
-
-        span {
-            display: none;
-        }
-
-        .Icon {
-            margin-right: 20px;
-        }
 
         .fullHeight {
             height: 100%;

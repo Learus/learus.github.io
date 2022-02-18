@@ -4,7 +4,7 @@ html,
 body {
   padding: 0;
   margin: 0;
-  font-family: monospace, Source Sans Pro, Montserrat, Open Sans, sans-serif;
+  font-family: Consolas, Source Sans Pro, monospace, Montserrat, Open Sans, sans-serif;
   overflow: overlay;
 }
 
@@ -21,7 +21,6 @@ a {
 ::-webkit-scrollbar {
   width: 10px;
   height: 10px;
-
 }
 
 /* Track */
@@ -32,7 +31,7 @@ a {
 /* Handle */
 ::-webkit-scrollbar-thumb {
   background: $black;
-  border-radius: 5px;;
+  border-radius: 5px;
 }
 
 /* Handle on hover */

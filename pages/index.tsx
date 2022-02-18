@@ -1,21 +1,28 @@
-import type { NextPage } from 'next'
-import Head from 'next/head'
-import Image from 'next/image'
-import styles from '../styles/Home.module.scss'
 import bannerImage from '../public/banner.jpeg';
-import Link from 'next/link';
-import Tabs, { Tab } from '../components/Tabs';
-import { useState } from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faEmber, faGithub, faGithubAlt, faGooglePay, faGooglePlay, faLinkedin, faLinkedinIn, faNpm } from '@fortawesome/free-brands-svg-icons';
-import { faEnvelope, faEnvelopeOpen } from '@fortawesome/free-regular-svg-icons';
-import { faAt, faBeer, faCoffee, faDesktop, faEnvelopeSquare, faGamepad, faMugHot, faNetworkWired, faTrophy } from '@fortawesome/free-solid-svg-icons';
-import AwesomeSlider from 'react-awesome-slider';
-// import AutoplaySlider from 'react-awesome-slider/src/hoc/autoplay';
-import 'react-awesome-slider/dist/styles.css';
-import 'react-awesome-slider/dist/custom-animations/cube-animation.css';
-import { Project } from '../components/Projects/Project';
 import Carousel from '../components/Carousel';
+import Head from 'next/head';
+import Image from 'next/image';
+import Link from 'next/link';
+import styles from '../styles/Home.module.scss';
+import Tabs, { Tab } from '../components/Tabs';
+import
+{
+    faCloudDownloadAlt,
+    faCoffee,
+    faDesktop,
+    faDownload,
+    faGamepad,
+    faTrophy
+} from '@fortawesome/free-solid-svg-icons';
+import { faGithub, faLinkedin, faNpm } from '@fortawesome/free-brands-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { Project } from '../components/Projects/Project';
+import { useEffect, useState } from 'react';
+import type { NextPage } from 'next'
+import axios from 'axios';
+import { webProjects } from '../projects/web';
+import { gameProjects } from '../projects/games';
+import { contestProjects } from '../projects/contests';
 
 
 const tabs = {
@@ -45,7 +52,7 @@ const Home: NextPage = () =>
         <div >
             <Head>
                 <title>Yannis Maliaras - Learus</title>
-                <meta name="description" content="Yannis Maliaras's Portfolio" />
+                <meta name="description" content="Yannis Maliaras - Learus Portfolio" />
             </Head>
 
             <div className={styles.banner}>
@@ -62,18 +69,18 @@ const Home: NextPage = () =>
 
                             <Link href='/'><a className={styles.logo}><h2>Learus</h2></a></Link>
                             <Link href='mailto:jmaliaras@gmail.com' >
-                                <a className={styles.mailLink}>
+                                <a className={styles.mailLink} title='E-mail'>
                                     jmaliaras@gmail.com
                                 </a>
                             </Link>
 
-                            <Link href='https://www.linkedin.com/in/ioannis-maliaras/'><a target='_blank'>
+                            <Link href='https://www.linkedin.com/in/ioannis-maliaras/'><a target='_blank' title='LinkedIn'>
                                 <FontAwesomeIcon icon={faLinkedin} size='2x' />
                             </a></Link>
-                            <Link href='https://github.com/Learus'><a target='_blank'>
+                            <Link href='https://github.com/Learus'><a target='_blank' title='Github'>
                                 <FontAwesomeIcon icon={faGithub} size='2x' />
                             </a></Link>
-                            <Link href='https://www.buymeacoffee.com/Learus'><a target='_blank'>
+                            <Link href='https://www.buymeacoffee.com/Learus'><a target='_blank' title='Buy me a coffee!'>
                                 <FontAwesomeIcon icon={faCoffee} size='2x' />
                             </a></Link>
 
@@ -87,9 +94,7 @@ const Home: NextPage = () =>
                             <br />
 
                             <div className={styles.description}>
-
                                 <p>
-                                    {/* <code> */}
                                     I am a <span className={styles.orange}>Computer Science Bachelor</span> from the National and Kapodistrian University of Athens.<br /><br />
                                     I specialize on <span className={styles.orange}>Full-Stack Web Development</span> using ReactJS and Node.js.<br /><br />
                                     I am a hobbyist <span className={styles.orange}>Game Developer</span>, having years of experience in Unity and C#.<br /><br />
@@ -97,7 +102,6 @@ const Home: NextPage = () =>
                                     maintaing quality User Experience.<br /><br />
                                     I bring a <span className={styles.orange}>strong sense of aesthetics</span>, attention to detail and a perfectionist attitude towards my work.<br /><br />
                                     I am an efficient learner with an <span className={styles.orange}>open-mind</span> for new technologies and ways to create.
-                                    {/* </code> */}
                                 </p>
                             </div>
                         </div>
@@ -114,7 +118,7 @@ const Home: NextPage = () =>
                                             key={key}
                                             color={value.color}
                                         >
-                                            <FontAwesomeIcon icon={value.icon} className={styles.Icon} /><span>{value.text}</span>
+                                            <FontAwesomeIcon icon={value.icon} className={styles.Icon} />
                                         </Tab>
                                     )
                                 })}
@@ -131,23 +135,10 @@ const Home: NextPage = () =>
                                         autoPlay={false}
                                         navButtonsAlwaysVisible
                                         fullHeightHover={false}
+                                    // cycleNavigation={fals}
                                     >
+                                        {webProjects.map((p, i) => <Project key={`webProject-${i}`} {...p} />)}
 
-                                        <Project
-                                            title="React Material UI Carousel"
-                                            technology={['ReactJS', 'Material UI', 'Typescript']}
-                                            description='asdf'
-                                            images={['https://source.unsplash.com/featured/?carousel']}
-                                            color='green'
-                                        />
-                                        <Project
-                                            title="Athens Philharmonia Orchestra Website"
-                                            technology={['ReactJS', 'Material UI', 'Typescript']}
-                                            description='asdf'
-                                            images={['https://source.unsplash.com/featured/?orchestra']}
-                                            color='black'
-                                        />
-                                       
                                     </Carousel>
                                 }
 
@@ -156,34 +147,28 @@ const Home: NextPage = () =>
                                         animation='slide'
                                         duration={1000}
                                         height='100%'
-                                        // className={`${styles.activeTab} ${styles[tabs[activeTab].color]}`}
+                                        indicators={false}
+                                        autoPlay={false}
+                                        navButtonsAlwaysVisible
+                                        fullHeightHover={false}
                                     >
 
-                                        <Project
-                                            title="Terrio"
-                                            technology={['Unity', 'C#']}
-                                            description='asdf'
-                                            images={['/terrio.png']}
-                                            color='orange'
-                                        />
+                                        {gameProjects.map((p, i) => <Project key={`gameProject-${i}`} {...p} />)}
                                     </Carousel>
                                 }
-                                
+
                                 {activeTab === 'contests' &&
                                     <Carousel
                                         animation='slide'
                                         duration={1000}
                                         height='100%'
-                                        // className={`${styles.activeTab} ${styles[tabs[activeTab].color]}`}
+                                        indicators={false}
+                                        autoPlay={false}
+                                        navButtonsAlwaysVisible
+                                        fullHeightHover={false}
                                     >
 
-                                        <Project
-                                            title="HashCode 2019"
-                                            technology={['ReactJS', 'Material UI', 'Typescript']}
-                                            description='asdf'
-                                            images={['https://source.unsplash.com/featured/?google']}
-                                            color='blue'
-                                        />
+                                        {contestProjects.map((p, i) => <Project key={`gameProject-${i}`} {...p} />)}
                                     </Carousel>
                                 }
 

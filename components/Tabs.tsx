@@ -39,9 +39,9 @@ interface TabProps
     color: 'brown' | 'white' | 'green' | 'black' | 'orange' | string
 }
 
-export function Tab({ children, onClick, ...props }: TabProps)
+export function Tab({ children, onClick, active, color, ...props }: TabProps)
 {
-    const className = `${styles.Tab} ${styles[props.color]} ${props.active ? styles.Active : ''}`
+    const className = `${styles.Tab} ${styles[color]} ${active ? styles.Active : ''}`
     const ref = useRef<HTMLDivElement>(null);
 
     const scroll = () =>
@@ -62,7 +62,7 @@ export function Tab({ children, onClick, ...props }: TabProps)
             ref={ref}
         >
             {children}
-            {props.active &&
+            {active &&
                 <>
                     {' '}
                     <FontAwesomeIcon icon={faArrowLeft} style={{marginLeft: 10}}/>

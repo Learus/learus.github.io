@@ -3,8 +3,7 @@
 @mixin background($color, $a: 0.7) {
     background-color: $color;
 
-    .Content
-    {
+    .Content {
         background-color: rgba($color, $a);
     }
 
@@ -19,18 +18,78 @@
     }
 }
 
+@include tablet {
+    .Title {
+        h1 {
+            font-size: 2rem !important;
+        }
+
+        .Subtitle,
+        .Technology {
+            font-size: 1.2rem !important;
+        }
+
+        margin-bottom: 0 !important;
+    }
+
+    .Body {
+        font-size: 1.2rem !important;
+        .Description {
+            padding-right: unset !important;
+        }
+    }
+
+    .Footer {
+        button {
+            min-width: unset !important;
+            font-size: 1rem !important;
+            span {
+                display: none;
+            }
+        }
+    }
+}
+
+@include mobile_tablet {
+    .Content {
+        width: 100% !important;
+    }
+}
+
+@include mobile {
+    .Title {
+        h1 {
+            font-size: 1.3rem !important;
+        }
+
+        .Subtitle,
+        .Technology {
+            font-size: 0.9rem !important;
+        }
+
+        margin-bottom: 0 !important;
+    }
+
+    .Body {
+        font-size: 0.9rem !important;
+        .Description {
+            padding-right: unset !important;
+        }
+    }
+
+    .Footer {
+        button {
+            min-width: unset !important;
+            font-size: 1rem !important;
+            span {
+                display: none;
+            }
+        }
+    }
+}
+
 .Project {
     height: 100%;
-
-    h1 {
-        font-weight: 600;
-        font-size: 2.5rem;
-        text-align: center;
-        // border-bottom: 2px solid $white;
-        padding: 3rem;
-        margin: 0;
-        z-index: 2;
-    }
 
     .ContentWrapper {
         padding: 30px;
@@ -41,30 +100,76 @@
         display: flex;
         flex-direction: column;
         height: 100%;
+        padding: 2.5rem;
+        color: $white;
 
         backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
         padding-bottom: 40px;
         background-color: rgba($white, 0.4);
+        box-shadow: 1px 1px 10px black;
+        width: 50%;
 
-        .Technology {
+        .Title {
+            h1 {
+                font-weight: 600;
+                font-size: 2.5rem;
+                margin: 0;
+            }
+
+            .Subtitle {
+                font-size: 1.5rem;
+                margin: 0;
+                color: rgb(185, 185, 185);
+            }
+
+            .Technology {
+                font-size: 1.3rem;
+                color: $orange;
+
+                .divider {
+                    color: $white;
+                }
+            }
+
+            margin-bottom: 30px;
+        }
+
+        .Body {
             flex: 1;
-            padding: 0 4rem;
-            font-size: 1.5rem;
-            z-index: 1;
+            font-size: 1.4rem;
 
-            .description {
+            .Description {
+                padding-right: 200px;
             }
         }
 
-        button {
-            border: none;
-            outline: none;
+        .Footer {
+            display: flex;
+            justify-content: space-evenly;
 
-            padding: 20px;
-            color: white;
-            cursor: pointer;
-            // border-radius: 5px;
-            font-size: 1.5rem;
+            button {
+                border: none;
+                outline: none;
+                text-transform: uppercase;
+                font-family: monospace;
+                background-color: $orange;
+                padding: 20px;
+                color: white;
+                cursor: pointer;
+                // border-radius: 5px;
+                font-size: 1.5rem;
+                min-width: 200px;
+                box-shadow: 3px 3px 10px black;
+                transition: 200ms;
+
+                &:hover {
+                    filter: brightness(120%);
+                }
+                &:active {
+                    filter: brightness(90%);
+                }
+            }
         }
     }
 
@@ -72,7 +177,6 @@
         position: absolute;
         height: 100%;
         width: 100%;
-        background-size: cover;
 
         &::before {
             content: "";
@@ -80,7 +184,6 @@
             height: 100%;
             position: absolute;
             width: 100%;
-            // backdrop-filter: grayscale(1);
         }
     }
 
@@ -100,7 +203,6 @@
         @include background($brown, 0.5);
     }
     &.black {
-        @include background($black, 0.5);
+        @include background($black, 0.8);
     }
-
 }

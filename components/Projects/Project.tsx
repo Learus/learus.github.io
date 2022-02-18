@@ -2,65 +2,74 @@ import Image from "next/image";
 import { ReactNode } from "react";
 import styles from './Project.module.scss'
 
-interface ProjectProps
+export interface ProjectProps
 {
-    images: string[],
+    image: string,
     description: ReactNode,
     title: string,
+    subtitle?: ReactNode,
     technology: string[],
-    color: string
+    color: string,
+    link?: string,
+    footer?: ReactNode,
+    position?: 'left' | 'right'
 }
 
-export function Project({ images, description, title, technology, color }: ProjectProps)
+export function Project({ image, subtitle, description, title, technology, color, link, footer, position = 'left' }: ProjectProps)
 {
+    const Emphasis = (props: any) => <span className={`${styles[color]}`} {...props} />
+
     return (
-        <div className={`${styles.Project} ${styles[color]}`} >
+        <div className={`${styles.Project} ${styles.black}`} >
 
             <div
                 className={styles.Images}
                 style={{
 
-                    backgroundImage: `url(${images[0]})`,
-                    backgroundColor: 'green',
+                    backgroundImage: `url(${image})`,
                     backgroundSize: 'cover'
                 }}
             />
 
             <div className={styles.ContentWrapper}>
-                <div className={styles.Content}>
-                    <div style={{ zIndex: 1 }}>
+                <div className={styles.Content} style={{ float: position }}>
+                    <div className={styles.Title}>
                         <h1>
                             {title}
                         </h1>
+                        <p className={styles.Subtitle}>{subtitle}</p>
+                        <p className={styles.Technology}>
+                            {technology.map((t, i, a) =>
+                            {
+                                return <span key={`${title}-technology-${i}`}>{t}{i !== a.length - 1 && <span className={styles.divider}> | </span>}</span>
+                            })}
+                        </p>
                     </div>
+
                     {/* keywords */}
-                    <div className={styles.Technology}>
-                        {technology.map(t =>
-                        {
-                            return (
-                                <li key={t}>{t}</li>
-                            )
-                        })}
-                        <br />
-                        <div className={styles.description}>
+                    <div className={styles.Body}>
+                        <div className={styles.Description}>
                             {/* description  */}
-                            {/* Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. */}
+                            {description}
                         </div>
 
-                        <a>
-                            <button>
-                                Check it out!
-                            </button>
-                        </a>
+
+                    </div>
+
+                    <div className={styles.Footer}>
+                        {footer ? footer :
+                            <a href={link} target='_blank' rel='noreferrer'>
+                                <button>
+                                    Check it out!
+                                </button>
+                            </a>
+                        }
                     </div>
 
                     {/* images */}
 
                 </div>
             </div>
-
-
-
         </div>
     )
 }
