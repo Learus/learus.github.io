@@ -11,6 +11,35 @@ const Orange = (props: any) => <span style={{ color: orange }} {...props} />
 
 export const gameProjects: ProjectProps[] = [
     {
+        title: "Thanks, Socrates",
+        subtitle: "Ludum Dare #50 - April 2022 - 3rd Place Humour",
+        technology: ['Unity', 'C#', 'Piskel', 'Soundbridge'],
+        description: (
+            <>
+                You are <Orange>Socrates</Orange>.<br/><br/>
+                A world renowned <Orange>intellectual</Orange> and <Orange>philosopher</Orange>.<br/>
+                Or so the books say.<br/><br/>
+                People from all around <Orange>time</Orange> and <Orange>mythos</Orange> request your counsel.<br/><br/>
+                Discover the true essence of the <Orange>Socratic method</Orange>, while trying not to burn the world in the process.<br/><br/>
+                Will you be able to give as much advice as you can before you inevitably <Orange>fall to your own wits</Orange>?
+            </>
+        ),
+        position: 'left',
+        color: 'black',
+        footer: (
+            <>
+                <a href='https://learus.itch.io/thanks-socrates' target='_blank' rel="noreferrer">
+                    <button style={{ backgroundColor: orange }}><FontAwesomeIcon icon={faDownload} /> Play Now!</button>
+                </a>
+
+                <a href='https://ldjam.com/events/ludum-dare/50/thanks-socrates' target='_blank' rel="noreferrer">
+                    <button style={{ backgroundColor: blue }}><FontAwesomeIcon icon={faTrophy} /> Submission</button>
+                </a>
+            </>
+        ),
+        image: '/projects/socrates1.png'
+    },
+    {
         title: "Viva La Revolution!",
         subtitle: "Ludum Dare #46 - April 2020",
         technology: ['Unity', 'C#', 'Piskel'],
@@ -68,7 +97,7 @@ export const gameProjects: ProjectProps[] = [
             <>
                 Get into the shoes of the brave adventurer, writer, and gambler, <Orange>Phileas Fogg.</Orange><br /><br />
                 This time our shrewd protagonist has made another ludicrous bet. To reach the <Orange>center of the earth</Orange> and return to tell the tale.<br /><br />
-                And all bets are off!<br/><br/>
+                And all bets are off!<br /><br />
                 A game for the <Orange>Ludum Dare #48</Orange>
             </>
         ),
