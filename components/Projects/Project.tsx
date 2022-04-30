@@ -11,7 +11,7 @@ export interface ProjectProps
     color: string,
     link?: string,
     footer?: ReactNode,
-    position?: 'left' | 'right'
+    position?: 'left' | 'right' | 'center'
 }
 
 export function Project({ image, subtitle, description, title, technology, color, link, footer, position = 'left' }: ProjectProps)
@@ -29,7 +29,7 @@ export function Project({ image, subtitle, description, title, technology, color
             />
 
             <div className={styles.ContentWrapper}>
-                <div className={styles.Content} style={{ float: position }}>
+                <div className={styles.Content} style={{ float: position === 'center' ? 'unset' : position, margin: position === 'center' ? '0 auto' : undefined }}>
                     <div className={styles.Title}>
                         <h1>
                             {title}

@@ -17,14 +17,11 @@ export const gameProjects: ProjectProps[] = [
         description: (
             <>
                 You are <Orange>Socrates</Orange>.<br/><br/>
-                A world renowned <Orange>intellectual</Orange> and <Orange>philosopher</Orange>.<br/>
-                Or so the books say.<br/><br/>
                 People from all around <Orange>time</Orange> and <Orange>mythos</Orange> request your counsel.<br/><br/>
-                Discover the true essence of the <Orange>Socratic method</Orange>, while trying not to burn the world in the process.<br/><br/>
                 Will you be able to give as much advice as you can before you inevitably <Orange>fall to your own wits</Orange>?
             </>
         ),
-        position: 'left',
+        position: 'center',
         color: 'black',
         footer: (
             <>
@@ -37,7 +34,7 @@ export const gameProjects: ProjectProps[] = [
                 </a>
             </>
         ),
-        image: '/projects/socrates1.png'
+        image: '/projects/socrates2.png'
     },
     {
         title: "Viva La Revolution!",
