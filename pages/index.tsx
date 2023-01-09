@@ -31,11 +31,11 @@ const tabs = {
         color: 'orange',
         icon: faGamepad
     },
-    contests: {
-        text: "Contests",
-        color: 'blue',
-        icon: faTrophy
-    }
+    // contests: {
+    //     text: "Contests",
+    //     color: 'blue',
+    //     icon: faTrophy
+    // }
 }
 
 const Home: NextPage = () =>
@@ -113,7 +113,8 @@ const Home: NextPage = () =>
                                             key={key}
                                             color={value.color}
                                         >
-                                            <FontAwesomeIcon icon={value.icon} className={styles.Icon} />
+                                            {value.text}
+                                            {/* <FontAwesomeIcon icon={value.icon} className={styles.Icon} /> */}
                                         </Tab>
                                     )
                                 })}
@@ -152,7 +153,7 @@ const Home: NextPage = () =>
                                     </Carousel>
                                 }
 
-                                {activeTab === 'contests' &&
+                                {/* {activeTab === 'contests' &&
                                     <Carousel
                                         animation='slide'
                                         duration={1000}
@@ -165,8 +166,7 @@ const Home: NextPage = () =>
 
                                         {contestProjects.map((p, i) => <Project key={`gameProject-${i}`} {...p} />)}
                                     </Carousel>
-                                }
-
+                                } */}
 
                             </div>
                         </div>

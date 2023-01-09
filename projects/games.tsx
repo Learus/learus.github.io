@@ -1,5 +1,5 @@
 import { faGithub, faGooglePlay } from '@fortawesome/free-brands-svg-icons';
-import { faCloudDownloadAlt, faDownload, faTrophy } from '@fortawesome/free-solid-svg-icons';
+import { faCloudDownloadAlt, faDownload, faPlay, faTrophy } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
 import { ProjectProps } from '../components/Projects/Project';
@@ -35,6 +35,29 @@ export const gameProjects: ProjectProps[] = [
             </>
         ),
         image: '/projects/socrates2.png'
+    },
+    {
+        title: "A Light Approach",
+        subtitle: "Prototype - A Hidden World - October 2022",
+        technology: ['Godot', 'GDScript'],
+        description: (
+            <>
+                A Light Approach is an <Orange>explorative platformer</Orange> game about getting to know your world.<br/><br/>
+                You start out <Orange>knowing nothing</Orange> about the level. Every object you touch becomes <Orange>visible</Orange>.<br/><br/>
+                Every 60 seconds you have to <Orange>restart</Orange>, while everything you have learned is <Orange>preserved.</Orange><br/><br/>
+                Can you <Orange>find your way</Orange> to the end?
+            </>
+        ),
+        position: 'left',
+        color: 'black',
+        footer: (
+            <>
+                <a href='https://learus.github.io/A-Light-Approach' target='_blank' rel="noreferrer">
+                    <button style={{ backgroundColor: blue }}><FontAwesomeIcon icon={faPlay} /> Play Now!</button>
+                </a>
+            </>
+        ),
+        image: '/projects/alightapproach1.png'
     },
     {
         title: "Viva La Revolution!",
