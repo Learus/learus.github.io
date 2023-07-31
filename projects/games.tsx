@@ -11,13 +11,36 @@ const Orange = (props: any) => <span style={{ color: orange }} {...props} />
 
 export const gameProjects: ProjectProps[] = [
     {
+        title: "Ensouled",
+        subtitle: "January 2023 - Present",
+        technology: ['Unity', 'C#', 'FMOD'],
+        description: (
+            <>
+            Ensouled is a <Orange>2D action platformer</Orange> with <Orange>metroidvania</Orange> aspects and tightly bound movement and combat.
+            <br/><br/>
+            Set in a dystopian future, the storyline follows <Orange>N1k0</Orange>, a passenger of the SS. Hominem 03 <Orange>spaceship</Orange>, 
+            who suddenly regains consciousness years after being <Orange>forcefully</Orange> transformed into a <Orange>cyber-soldier</Orange>.
+            </>
+        ),
+        position: 'right',
+        color: 'black',
+        footer: (
+            <>
+                <a href='https://giorgio-perri.itch.io/ensouled' target='_blank' rel="noreferrer">
+                    <button style={{ backgroundColor: blue }}><FontAwesomeIcon icon={faPlay} /> Play Now!</button>
+                </a>
+            </>
+        ),
+        image: '/projects/ensouled.png'
+    },
+    {
         title: "Thanks, Socrates",
         subtitle: "Ludum Dare #50 - April 2022 - 3rd Place Humour",
         technology: ['Unity', 'C#', 'Piskel', 'Soundbridge'],
         description: (
             <>
-                You are <Orange>Socrates</Orange>.<br/><br/>
-                People from all around <Orange>time</Orange> and <Orange>mythos</Orange> request your counsel.<br/><br/>
+                You are <Orange>Socrates</Orange>.<br /><br />
+                People from all around <Orange>time</Orange> and <Orange>mythos</Orange> request your counsel.<br /><br />
                 Will you be able to give as much advice as you can before you inevitably <Orange>fall to your own wits</Orange>?
             </>
         ),
@@ -37,14 +60,36 @@ export const gameProjects: ProjectProps[] = [
         image: '/projects/socrates2.png'
     },
     {
+        title: "Echo",
+        subtitle: "Artful Societal Commentary - May 2023",
+        technology: ['Godot', 'C#'],
+        description: (
+            <>
+                Echo is an <Orange>artful</Orange> game meant to comment on the social phenomenon that is <Orange>&quot;Echo Chambers&quot;</Orange> in an <Orange>abstract</Orange> and non-explicit way.
+                <br /><br />
+                <i>Put a comfortable lie in an echo chamber, and <Orange>nobody</Orange> will challenge it. It will reverberate until it is <Orange>accepted</Orange> as actually true.</i>
+            </>
+        ),
+        position: 'left',
+        image: 'projects/echo.png',
+        color: 'black',
+        footer: (
+            <>
+                <a href='https://learus.github.io/echo' target='_blank' rel="noreferrer">
+                    <button style={{ backgroundColor: blue }}><FontAwesomeIcon icon={faPlay} /> Play Now!</button>
+                </a>
+            </>
+        )
+    },
+    {
         title: "A Light Approach",
         subtitle: "Prototype - A Hidden World - October 2022",
         technology: ['Godot', 'GDScript'],
         description: (
             <>
-                A Light Approach is an <Orange>explorative platformer</Orange> game about getting to know your world.<br/><br/>
-                You start out <Orange>knowing nothing</Orange> about the level. Every object you touch becomes <Orange>visible</Orange>.<br/><br/>
-                Every 60 seconds you have to <Orange>restart</Orange>, while everything you have learned is <Orange>preserved.</Orange><br/><br/>
+                A Light Approach is an <Orange>explorative platformer</Orange> game about getting to know your world.<br /><br />
+                You start out <Orange>knowing nothing</Orange> about the level. Every object you touch becomes <Orange>visible</Orange>.<br /><br />
+                Every 60 seconds you have to <Orange>restart</Orange>, while everything you have learned is <Orange>preserved.</Orange><br /><br />
                 Can you <Orange>find your way</Orange> to the end?
             </>
         ),
