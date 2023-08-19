@@ -66,4 +66,14 @@
     {
         @include colorize($black, 5);
     }
+
+    &.darkgrey
+    {
+        @include colorize(#2b2b2bb6, 5);
+    }
+
+    &.darkergrey
+    {
+        @include colorize(#1c1c1cab, 5);
+    }
 }

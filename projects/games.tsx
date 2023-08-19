@@ -5,8 +5,8 @@ import React from 'react';
 import { ProjectProps } from '../components/Projects/Project';
 
 const black = '#2b2b2b';
-const orange = '#e48257';
-const blue = '#2e5870';
+const orange = '#18cd9d';
+const blue = '#EE6352';
 const Orange = (props: any) => <span style={{ color: orange }} {...props} />
 
 export const gameProjects: ProjectProps[] = [
@@ -27,7 +27,7 @@ export const gameProjects: ProjectProps[] = [
         footer: (
             <>
                 <a href='https://giorgio-perri.itch.io/ensouled' target='_blank' rel="noreferrer">
-                    <button style={{ backgroundColor: blue }}><FontAwesomeIcon icon={faPlay} /> Play Now!</button>
+                    <button style={{ backgroundColor: orange }}><FontAwesomeIcon icon={faPlay} /> Play Now!</button>
                 </a>
             </>
         ),
@@ -76,7 +76,7 @@ export const gameProjects: ProjectProps[] = [
         footer: (
             <>
                 <a href='https://learus.github.io/echo' target='_blank' rel="noreferrer">
-                    <button style={{ backgroundColor: blue }}><FontAwesomeIcon icon={faPlay} /> Play Now!</button>
+                    <button style={{ backgroundColor: orange }}><FontAwesomeIcon icon={faPlay} /> Play Now!</button>
                 </a>
             </>
         )
@@ -98,7 +98,7 @@ export const gameProjects: ProjectProps[] = [
         footer: (
             <>
                 <a href='https://learus.github.io/A-Light-Approach' target='_blank' rel="noreferrer">
-                    <button style={{ backgroundColor: blue }}><FontAwesomeIcon icon={faPlay} /> Play Now!</button>
+                    <button style={{ backgroundColor: orange }}><FontAwesomeIcon icon={faPlay} /> Play Now!</button>
                 </a>
             </>
         ),

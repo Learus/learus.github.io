@@ -5,7 +5,7 @@ import React from 'react';
 import { ProjectProps } from '../components/Projects/Project';
 
 const black = '#2b2b2b';
-const orange = '#e48257';
+const orange = '#18cd9d';
 const green = '#3a6351'
 const blue = '#2e5870';
 const Orange = (props: any) => <span style={{ color: orange }} {...props} />
@@ -20,6 +20,8 @@ export const webProjects: ProjectProps[] = [{
             An open-source, extendible, and easy-to-use <Orange>Carousel UI component</Orange> for React using Material UI.<br /> <br />
             It switches between given children using smooth animations.< br />
             Provides next and previous buttons, and interactible bullet indicators.
+            <br/><br/>
+            In fact, this carousel is built <Orange>using itself</Orange>!
         </>
     ),
 

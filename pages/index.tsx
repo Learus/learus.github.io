@@ -23,12 +23,12 @@ import { contestProjects } from '../projects/contests';
 const tabs = {
     web: {
         text: "Web Projects",
-        color: 'green',
+        color: 'darkgrey',
         icon: faDesktop
     },
     game: {
         text: "Games",
-        color: 'orange',
+        color: 'darkergrey',
         icon: faGamepad
     },
     // contests: {
@@ -51,7 +51,7 @@ const Home: NextPage = () =>
             </Head>
 
             <div className={styles.banner}>
-                <img src={'banner.jpeg'} alt='background'/>
+                <img src={'banner.png'} alt='background'/>
             </div>
 
             <div className={styles.container}>
