@@ -5,7 +5,7 @@ import React from 'react';
 import { ProjectProps } from '../components/Projects/Project';
 
 const black = '#2b2b2b';
-const orange = '#e48257';
+const orange = '#18cd9d';
 const green = '#3a6351'
 const blue = '#2e5870';
 const Orange = (props: any) => <span style={{ color: orange }} {...props} />
@@ -20,6 +20,8 @@ export const webProjects: ProjectProps[] = [{
             An open-source, extendible, and easy-to-use <Orange>Carousel UI component</Orange> for React using Material UI.<br /> <br />
             It switches between given children using smooth animations.< br />
             Provides next and previous buttons, and interactible bullet indicators.
+            <br/><br/>
+            In fact, this carousel is built <Orange>using itself</Orange>!
         </>
     ),
 
@@ -37,6 +39,28 @@ export const webProjects: ProjectProps[] = [{
         </>
     ),
     position: 'right'
+},
+{
+    title: "Maliaras ERP",
+    logo: 'projects/maliaras_logo.png',
+    subtitle: "September 2021 - September 2023",
+    technology: ['Typescript', 'Next.js', 'NestJS', 'Prisma', 'MariaDB'],
+    description: (
+        <>
+        A <Orange>fully interconnected</Orange> web application that handles most of the duties the private school might need to function.
+        <br/><br/>
+        It implements custom solutions for <Orange>everything</Orange> starting 
+        from student register, asynchronous learning, class distribution, and student payments, 
+        to personnel management, payroll, newsletters, financial reports, and <Orange>many others</Orange>.
+        <br/><br/>
+        It&apos;s been made over the course of 2 years by me, using <Orange>industry standards</Orange> for both back-end, front-end, and UI/UX design.
+        </>
+    ),
+    color: 'black',
+    image: 'projects/erp_background.jpg',
+    imageBackgroundSize: 'auto',
+    position: 'left',
+    footer: <></>
 },
 {
     title: 'GeoQA Interface',

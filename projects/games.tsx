@@ -1,18 +1,48 @@
-import { faGithub, faGooglePlay } from '@fortawesome/free-brands-svg-icons';
+import { faDiscord, faGithub, faGooglePlay } from '@fortawesome/free-brands-svg-icons';
 import { faCloudDownloadAlt, faDownload, faPlay, faTrophy } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
 import { ProjectProps } from '../components/Projects/Project';
 
 const black = '#2b2b2b';
-const orange = '#e48257';
-const blue = '#2e5870';
+const orange = '#18cd9d';
+const blue = '#EE6352';
 const Orange = (props: any) => <span style={{ color: orange }} {...props} />
 
 export const gameProjects: ProjectProps[] = [
     {
+        title: "Window Wars",
+        logo: '/projects/windowwarslogo.png',
+        subtitle: "December 2023 - Present",
+        technology: ['Godot', 'GDScript', 'Multiplayer', 'Nakama', 'FMOD'],
+        description: (
+            <>
+                Window Wars is a fresh take on the <Orange>Arena Brawler</Orange> genre, aspiring to be much more than that.
+                <br/><br/>
+                Each player controls their own <Orange>little window</Orange>, having clear vision of only the small area around them.
+                <br/><br/>
+                Choose the skills that better suit your playstyle and <Orange>fight</Orange> your way to victory!
+                <br/><br/>
+                Invite your friends to play and battle it out in <Orange>multiple modes</Orange> of play.
+            </>
+        ),
+        position: 'left',
+        color: 'black',
+        footer: (
+            <>
+                <a href='https://learus.itch.io/window-wars' target='_blank' rel="noreferrer">
+                    <button style={{ backgroundColor: orange }}><FontAwesomeIcon icon={faPlay} /> Play Now!</button>
+                </a>
+                <a href='https://discord.gg/bRPu7xCPB7' target='_blank' rel="noreferrer">
+                    <button style={{ backgroundColor: '#5865f2' }}><FontAwesomeIcon icon={faDiscord} /> Community</button>
+                </a>
+            </>
+        ),
+        image: '/projects/windowwars.png'
+    },
+    {
         title: "Ensouled",
-        subtitle: "January 2023 - Present",
+        subtitle: "January 2023 - June 2023",
         technology: ['Unity', 'C#', 'FMOD'],
         description: (
             <>
@@ -27,7 +57,7 @@ export const gameProjects: ProjectProps[] = [
         footer: (
             <>
                 <a href='https://giorgio-perri.itch.io/ensouled' target='_blank' rel="noreferrer">
-                    <button style={{ backgroundColor: blue }}><FontAwesomeIcon icon={faPlay} /> Play Now!</button>
+                    <button style={{ backgroundColor: orange }}><FontAwesomeIcon icon={faPlay} /> Play Now!</button>
                 </a>
             </>
         ),
@@ -75,8 +105,8 @@ export const gameProjects: ProjectProps[] = [
         color: 'black',
         footer: (
             <>
-                <a href='https://learus.github.io/echo' target='_blank' rel="noreferrer">
-                    <button style={{ backgroundColor: blue }}><FontAwesomeIcon icon={faPlay} /> Play Now!</button>
+                <a href='https://learus.itch.io/echo' target='_blank' rel="noreferrer">
+                    <button style={{ backgroundColor: orange }}><FontAwesomeIcon icon={faPlay} /> Play Now!</button>
                 </a>
             </>
         )
@@ -97,9 +127,9 @@ export const gameProjects: ProjectProps[] = [
         color: 'black',
         footer: (
             <>
-                <a href='https://learus.github.io/A-Light-Approach' target='_blank' rel="noreferrer">
-                    <button style={{ backgroundColor: blue }}><FontAwesomeIcon icon={faPlay} /> Play Now!</button>
-                </a>
+                {/* <a href='https://learus.itch.io/A-Light-Approach' target='_blank' rel="noreferrer">
+                    <button style={{ backgroundColor: orange }}><FontAwesomeIcon icon={faPlay} /> Play Now!</button>
+                </a> */}
             </>
         ),
         image: '/projects/alightapproach1.png'
