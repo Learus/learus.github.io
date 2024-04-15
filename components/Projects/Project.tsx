@@ -4,17 +4,19 @@ import styles from './Project.module.scss'
 export interface ProjectProps
 {
     image: string,
+    logo?: string,
     description: ReactNode,
     title: string,
     subtitle?: ReactNode,
     technology: string[],
     color: string,
+    imageBackgroundSize?: 'cover' | 'auto'
     link?: string,
     footer?: ReactNode,
     position?: 'left' | 'right' | 'center'
 }
 
-export function Project({ image, subtitle, description, title, technology, color, link, footer, position = 'left' }: ProjectProps)
+export function Project({ image, imageBackgroundSize = 'cover', logo, subtitle, description, title, technology, color, link, footer, position = 'left' }: ProjectProps)
 {
     return (
         <div className={`${styles.Project} ${styles.black}`} >
@@ -24,24 +26,39 @@ export function Project({ image, subtitle, description, title, technology, color
                 style={{
 
                     backgroundImage: `url(${image})`,
-                    backgroundSize: 'cover'
+                    backgroundSize: imageBackgroundSize
                 }}
             />
 
             <div className={styles.ContentWrapper}>
                 <div className={styles.Content} style={{ float: position === 'center' ? 'unset' : position, margin: position === 'center' ? '0 auto' : undefined }}>
-                    <div className={styles.Title}>
-                        <h1>
-                            {title}
-                        </h1>
-                        <p className={styles.Subtitle}>{subtitle}</p>
-                        <p className={styles.Technology}>
-                            {technology.map((t, i, a) =>
-                            {
-                                return <span key={`${title}-technology-${i}`}>{t}{i !== a.length - 1 && <span className={styles.divider}> | </span>}</span>
-                            })}
-                        </p>
+
+                    <div className={styles.ProjectHeader}>
+                        {logo &&
+                            <div className={styles.Logo}>
+
+                                <img
+                                    src={logo}
+                                    alt={title}
+                                    style={{ maxHeight: 122 }}
+                                />
+
+                            </div>
+                        }
+                        <div className={styles.Title}>
+                            <h1>
+                                {title}
+                            </h1>
+                            <p className={styles.Subtitle}>{subtitle}</p>
+                            <p className={styles.Technology}>
+                                {technology.map((t, i, a) =>
+                                {
+                                    return <span key={`${title}-technology-${i}`}>{t}{i !== a.length - 1 && <span className={styles.divider}> | </span>}</span>
+                                })}
+                            </p>
+                        </div>
                     </div>
+
 
                     {/* keywords */}
                     <div className={styles.Body}>

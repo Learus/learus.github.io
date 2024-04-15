@@ -41,6 +41,28 @@ export const webProjects: ProjectProps[] = [{
     position: 'right'
 },
 {
+    title: "Maliaras ERP",
+    logo: 'projects/maliaras_logo.png',
+    subtitle: "September 2021 - September 2023",
+    technology: ['Typescript', 'Next.js', 'NestJS', 'Prisma', 'MariaDB'],
+    description: (
+        <>
+        A <Orange>fully interconnected</Orange> web application that handles most of the duties the private school might need to function.
+        <br/><br/>
+        It implements custom solutions for <Orange>everything</Orange> starting 
+        from student register, asynchronous learning, class distribution, and student payments, 
+        to personnel management, payroll, newsletters, financial reports, and <Orange>many others</Orange>.
+        <br/><br/>
+        It&apos;s been made over the course of 2 years by me, using <Orange>industry standards</Orange> for both back-end, front-end, and UI/UX design.
+        </>
+    ),
+    color: 'black',
+    image: 'projects/erp_background.jpg',
+    imageBackgroundSize: 'auto',
+    position: 'left',
+    footer: <></>
+},
+{
     title: 'GeoQA Interface',
     subtitle: 'Bachelor Thesis | February 2020 - August 2020',
     technology: ['Node.js', 'Express', 'ReactJS', 'Material UI'],

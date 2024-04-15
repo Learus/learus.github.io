@@ -110,6 +110,12 @@
         box-shadow: 1px 1px 10px black;
         width: 50%;
 
+        .ProjectHeader {
+            display: flex;
+            flex-direction: row;
+            gap: 30px;
+        }
+
         .Title {
             h1 {
                 font-weight: 600;
@@ -177,6 +183,7 @@
         position: absolute;
         height: 100%;
         width: 100%;
+        background-repeat: repeat;
 
         &::before {
             content: "";
