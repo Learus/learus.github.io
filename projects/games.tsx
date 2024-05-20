@@ -1,5 +1,5 @@
 import { faDiscord, faGithub, faGooglePlay } from '@fortawesome/free-brands-svg-icons';
-import { faCloudDownloadAlt, faDownload, faPlay, faTrophy } from '@fortawesome/free-solid-svg-icons';
+import { faCloudDownloadAlt, faDownload, faGamepad, faPlay, faTrophy } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
 import { ProjectProps } from '../components/Projects/Project';
@@ -18,11 +18,11 @@ export const gameProjects: ProjectProps[] = [
         description: (
             <>
                 Window Wars is a fresh take on the <Orange>Arena Brawler</Orange> genre, aspiring to be much more than that.
-                <br/><br/>
+                <br /><br />
                 Each player controls their own <Orange>little window</Orange>, having clear vision of only the small area around them.
-                <br/><br/>
+                <br /><br />
                 Choose the skills that better suit your playstyle and <Orange>fight</Orange> your way to victory!
-                <br/><br/>
+                <br /><br />
                 Invite your friends to play and battle it out in <Orange>multiple modes</Orange> of play.
             </>
         ),
@@ -41,15 +41,50 @@ export const gameProjects: ProjectProps[] = [
         image: '/projects/windowwars.png'
     },
     {
+        title: "Truth is...",
+        subtitle: "May 2024",
+        technology: ['Godot', 'GDScript'],
+        description: (
+            <>
+                Truth is... was developed at the <Orange>Truth, Lies & Democracy</Orange> Game Jam
+                in the context of the European Capital of Democracy 2024.
+                <br /><br />
+                In the game, the player writes a <Orange>piece of news</Orange> – which, depending on their choices, may take unexpected turns.
+                <br /><br />
+                The game intends to let the player experience the <Orange>stark contrast</Orange> between the constant and
+                often arduous mental effort required to stick to <Orange>factfulness</Orange> and <Orange>neutrality</Orange> on the one hand, and
+                perpetual temptation of getting swept up in <Orange>what we wanted to believe all along</Orange>.
+            </>
+        ),
+        position: 'right',
+        color: 'black',
+        footer: (
+            <>
+                <a href='https://giorgio-perri.itch.io/truth-is' target='_blank' rel="noreferrer">
+                    <button style={{ backgroundColor: orange }}><FontAwesomeIcon icon={faPlay} /> Play</button>
+                </a>
+                <a href='https://capitalofdemocracy.eu/truth-lies-democracy/' target='_blank' rel="noreferrer">
+                    <button style={{
+                        backgroundColor: black,
+                    }}
+                    >
+                        <FontAwesomeIcon icon={faTrophy} /> Game Jam
+                    </button>
+                </a>
+            </>
+        ),
+        image: '/projects/truthis3.png'
+    },
+    {
         title: "Ensouled",
         subtitle: "January 2023 - June 2023",
         technology: ['Unity', 'C#', 'FMOD'],
         description: (
             <>
-            Ensouled is a <Orange>2D action platformer</Orange> with <Orange>metroidvania</Orange> aspects and tightly bound movement and combat.
-            <br/><br/>
-            Set in a dystopian future, the storyline follows <Orange>N1k0</Orange>, a passenger of the SS. Hominem 03 <Orange>spaceship</Orange>, 
-            who suddenly regains consciousness years after being <Orange>forcefully</Orange> transformed into a <Orange>cyber-soldier</Orange>.
+                Ensouled is a <Orange>2D action platformer</Orange> with <Orange>metroidvania</Orange> aspects and tightly bound movement and combat.
+                <br /><br />
+                Set in a dystopian future, the storyline follows <Orange>N1k0</Orange>, a passenger of the SS. Hominem 03 <Orange>spaceship</Orange>,
+                who suddenly regains consciousness years after being <Orange>forcefully</Orange> transformed into a <Orange>cyber-soldier</Orange>.
             </>
         ),
         position: 'right',
