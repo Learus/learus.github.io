@@ -7,6 +7,7 @@ body {
   font-family: Consolas, monospace, Inconsolata, Montserrat, Open Sans, sans-serif;
   // font-weight: 600;
   overflow: overlay;
+  overflow-x: hidden;
 }
 
 a {
@@ -26,16 +27,16 @@ a {
 
 /* Track */
 ::-webkit-scrollbar-track {
-  // background: $white;
+  background: $black;
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: $black;
+  background: $white;
   border-radius: 5px;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: darken($black, 1);
+  background: darken($white, 1);
 }
