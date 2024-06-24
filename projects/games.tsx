@@ -38,7 +38,7 @@ export const gameProjects: ProjectProps[] = [
                 </a>
             </>
         ),
-        image: '/projects/windowwars.png'
+        image: '/projects/newwindowwars3.png'
     },
     {
         title: "Truth is...",
